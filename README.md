@@ -20,12 +20,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1: Create Resources via Azure Portal
-- Step 2: Observe ICMP Traffic
-- Step 3: Observe SSH Traffic
-- Step 4: Observe DHCP Traffic
-- Step 5: Observe DNS Traffic
-- Step 6: Observe RDP Traffic
+- Step 1: Create Your Resources via Azure Portal
+- Step 2: Use Remote Desktop to Install WireShark
+- Step 3: Use Command Line to Enter Varied Network Protocols 
+- Step 4: Observe Traffic for Each Protocol in WireShark 
+  
 
 <h2>Actions and Observations</h2>
 
