@@ -22,7 +22,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - Step 1: Create Your Resources via Azure Portal
 - Step 2: Use Remote Desktop to Install WireShark
-- Step 3: Use Command Line to Enter Various Network Protocols 
+- Step 3: Use PowerShell to Execute Various Commands- line Tools and Network Protocols 
 - Step 4: Observe Raw Traffic Being Transmitted via WireShark 
   
 
