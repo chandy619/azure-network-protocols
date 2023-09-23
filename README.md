@@ -98,6 +98,6 @@ Next up, we will observe DNS (Domain Name System) traffic. Filter for DNS traffi
 <img width="671" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/ca9537b9-f839-4cfd-882c-ce6ff8f1f87a">
 </p>
 <p>
-The last protocol we will observe is RDP (Remote Desktop Protocol). You can filter the traffic in Wireshark by typing in 'RDP' or 'tcp.port==3389". Remember that we are already using Remote Desktop to interact with the Windows VM, so when you hit enter, you will can expect the spamming of RDP traffic.
+The last protocol we will observe is RDP (Remote Desktop Protocol). You can filter the traffic in Wireshark by typing in 'RDP' or 'tcp.port==3389". Remember that we are already using Remote Desktop to interact with the Windows VM, so when you hit enter, you can expect constant spamming of RDP traffic via Wireshark. To close out of your Remote Desktop session, enter 'exit' into the PowerShell command line.
 </p>
 <br />
