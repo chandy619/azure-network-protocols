@@ -23,7 +23,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Step 1: Create your resources via Microsoft Azure.
 - Step 2: Install WireShark on your Windows VM using Remote Desktop Connection.
 - Step 3: Use PowerShell to execute various Command- Line Tools and Network Protocols. 
-- Step 4: Add rules to your Linux VM's Network Security Settings.
+- Step 4: Edit your Linux VM's Network Security (Firewall) Settings.
 - Step 5: Observe raw traffic being transmitted or blocked via WireShark.
   
 
@@ -33,7 +33,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img width="503" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/63a5e804-8beb-4d81-b07b-9e513c90566e">
 </p>
 <p>
-Witihin Azure, you'll need to create a new Resource Group that will house two Virtual Machines (VMs); one for Windows 10 Pro and the other for Linux (Ubuntu). However, both VMs will need to share the same Virtual Network (Vnet).
+Witihin Azure, you'll need to create a new Resource Group that will house two Virtual Machines (VMs); one for Windows 10 Pro and the other for Linux (Ubuntu). Be sure that both VMs share the same Virtual Network (Vnet).
 </p>
 <br />
 
@@ -42,30 +42,38 @@ Witihin Azure, you'll need to create a new Resource Group that will house two Vi
 <img width="365" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/ddbeb87f-d8c5-4613-a21c-4f8288e97f22">
 </p>
 <p>
-Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address to successfully login. From there, install WireShark (Traffic Analyzer) to be able to inspect traffic within your local computer.  
+Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address to successfully login. From there, install WireShark (Traffic Analyzer Software) to be able to inspect traffic within your local computer.  
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="668" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/3eda45d8-5a81-458a-971d-70e146314cb3">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Within WireShark, filter the traffic for ICMP (Internet Control Message Protocol). Next, open PowerShell from the windows start menu so you can execute various Command-Line tools. In order to test the connectivity between both VMs, you'll need to obtain the private IP address of the Linux VM in Azure. Using PowerShell, type 'ping' followed by the IP address or a domain name like google.com to test reachability of the target host. For a successful 'ping', you will see 4 data packets sent out; 4 received and 0 losses. Before the next part of this tutorial, execute a continuous ping to you Linux VM. To do this, add '-t' at the end of the 'ping' command. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="773" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/2f950706-b2e3-4bcb-8673-6735d351d414">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+In Azure, open the Network Security Group settings for your Linux VM so you can create a new rule. Edit the Inbound Security Rules to Deny ICMP traffic. Keep in mind, you can update a rule's priority level if you want it to take precedent over other rules. Can you guess what'll happen next when you return to WireShark and PowerShell?
+</p>
+<br />
+
+<p>
+<img width="724" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/1f9ab4f5-3092-466b-b48e-ba558212360e">
+</p>
+<p>
+As you may have guessed, your Windows VM is unable to successfully connect with your Linux VM due to the rule created. The perpetual 'ping' being sent out by the Windows VM begins to return as "request timed out" via Powershell. Simultaneously, WireShark fails to show a reply back after each request made. This is an example of how Firewalls work. To allow the Linux VM to receive ICMP traffic again, simply delete the rule you've just created. 
+</p>
+<br />
+
+<p>
+<img width="724" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/1f9ab4f5-3092-466b-b48e-ba558212360e">
+</p>
+<p>
+lkjdfhg.ldjgljfbkf
 </p>
 <br />
