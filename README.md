@@ -10,7 +10,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Various Command-Line Tools
-- Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
+- Various Network Protocols (ICMP, SSH, DHCP, DNS, RDP)
 - Wireshark (Protocol Analyzer)
 
 <h2>Operating Systems Used </h2>
@@ -42,7 +42,7 @@ Witihin Azure, you'll need to create a new Resource Group that will house two Vi
 <img width="365" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/ddbeb87f-d8c5-4613-a21c-4f8288e97f22">
 </p>
 <p>
-Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address to successfully login. From there, install WireShark (Protocol Analyzer Software) to be able to inspect traffic within your local computer.  
+Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address, username and password to successfully login. From there, install WireShark (Protocol Analyzer Software) to be able to inspect traffic within your local computer.  
 </p>
 <br />
 
@@ -66,7 +66,7 @@ In Azure, open the Network Security Group settings for your Linux VM so you can 
 <img width="724" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/1f9ab4f5-3092-466b-b48e-ba558212360e">
 </p>
 <p>
-As you may have guessed, your Windows VM is unable to successfully connect with your Linux VM due to the rule created. The perpetual 'ping' being sent out by the Windows VM begins to return as "request timed out" via Powershell. Simultaneously, WireShark fails to show a reply back after each request made. This is an example of how Firewalls work. To allow the Linux VM to receive ICMP traffic again, simply delete the rule you've just created. 
+As you may have guessed, your Windows VM is unable to successfully 'ping' your Linux VM due to the rule created. The perpetual 'ping' being sent out by the Windows VM begins to return as "request timed out" via Powershell. Simultaneously, WireShark fails to show a reply back after each request is made. This is an example of how Firewalls work. To allow the Linux VM to receive ICMP traffic again, simply delete the rule you've just created. 
 </p>
 <br />
 
@@ -74,15 +74,22 @@ As you may have guessed, your Windows VM is unable to successfully connect with 
 <img width="727" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/fabeaaca-daf0-454c-a55f-7dfac4e7b8bf">
 </p>
 <p>
-In the next part of the tutorial, filter the traffic in WireShark from ICMP to SSH (Secure Shell). SSH is another protocal similar to Remote Desktop without the visual display. To login to the Linux VM, use command 'ssh' following its username@IP address and, when prompted, enter its password. Once you're logged in, you can use Linux commands like 'id', 'uname -a', 'pwd', etc. to examine the traffic you've created while using SSH. To close the SSH connection, type 'exit' in the command line.
+In the next part of the tutorial, filter the traffic in WireShark from ICMP to SSH (Secure Shell). SSH is another protocol similar to Remote Desktop without the visual display. To login to the Linux VM, use command 'ssh' following its username@IP address and, when prompted, enter its password. Once you're logged in, you can use Linux commands like 'id', 'uname -a', 'pwd', etc. to examine the SSH traffic being created via WIreShark. To close the SSH connection, type 'exit' into the PowerShell command line.
 </p>
 <br />
 
 <p>
-<img width="853" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/58bc9692-470d-4ed4-88db-7a9084af212d">
-
+<img width="843" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/62504a1b-2c13-4993-afae-e6b3d85ffb36">
 </p>
 <p>
-To examine DHCP traffic in WireShark from SSH to DHCP.
+To examine DHCP (Dynamic Host Configuration Protocol) traffic in WireShark, change the filter from SSH to DHCP. To issue a new IP address to the Windows VM, enter 'ipconfig /renew' into PowerShell. This may cause a temporary disconnection as your IP address will be reissued. 
+</p>
+<br />
+
+<p>
+<img width="569" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/df1fb58b-a9af-486f-8379-5a1505f86394">
+</p>
+<p>
+Next up, we will observe DNS (Domain Name System) traffic. Filter for DNS traffic in WireShark. Instead of typing in DNS into the filter, you can also filter traffic if you know the port associated with the protocol. For instance, DNS uses both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) with port 53. Enter 'udp.port==53' and it will filter for DNS traffic. In PowerShell, use command 'nslookup' following the Domain Name you want the IP address for, i.e., google or disney.
 </p>
 <br />
