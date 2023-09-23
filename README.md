@@ -93,3 +93,11 @@ To examine DHCP (Dynamic Host Configuration Protocol) traffic in WireShark, chan
 Next up, we will observe DNS (Domain Name System) traffic. Filter for DNS traffic in WireShark. Instead of typing in DNS into the filter, you can also filter traffic if you know the port associated with the protocol. For instance, DNS uses both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) with port 53. Enter 'udp.port==53' and it will filter for DNS traffic. In PowerShell, use command 'nslookup' following the Domain Name you want the IP address for, i.e., google or disney.
 </p>
 <br />
+
+<p>
+<img width="671" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/ca9537b9-f839-4cfd-882c-ce6ff8f1f87a">
+</p>
+<p>
+The last protocol we will observe is RDP (Remote Desktop Protocol). You can filter the traffic in WireShark by typing in 'RDP' or 'tcp.port==3389". Remember that we are already using Remote Desktop to interact with the Windows VM, so when you hit enter, you will see a constant spam of RDP traffic being generated.
+</p>
+<br />
