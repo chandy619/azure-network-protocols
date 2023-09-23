@@ -42,7 +42,7 @@ Witihin Azure, you'll need to create a new Resource Group that will house two Vi
 <img width="365" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/ddbeb87f-d8c5-4613-a21c-4f8288e97f22">
 </p>
 <p>
-Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address to successfully login. From there, install WireShark (Traffic Analyzer Software) to be able to inspect traffic within your local computer.  
+Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address to successfully login. From there, install WireShark (Protocol Analyzer Software) to be able to inspect traffic within your local computer.  
 </p>
 <br />
 
@@ -71,9 +71,18 @@ As you may have guessed, your Windows VM is unable to successfully connect with 
 <br />
 
 <p>
-<img width="724" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/1f9ab4f5-3092-466b-b48e-ba558212360e">
+<img width="727" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/fabeaaca-daf0-454c-a55f-7dfac4e7b8bf">
 </p>
 <p>
-lkjdfhg.ldjgljfbkf
+In the next part of the tutorial, filter the traffic in WireShark from ICMP to SSH (Secure Shell). SSH is another protocal similar to Remote Desktop without the visual display. To login to the Linux VM, use command 'ssh' following its username@IP address and, when prompted, enter its password. Once you're logged in, you can use Linux commands like 'id', 'uname -a', 'pwd', etc. to examine the traffic you've created while using SSH. To close the SSH connection, type 'exit' in the command line.
+</p>
+<br />
+
+<p>
+<img width="853" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/58bc9692-470d-4ed4-88db-7a9084af212d">
+
+</p>
+<p>
+To examine DHCP traffic in WireShark from SSH to DHCP.
 </p>
 <br />
