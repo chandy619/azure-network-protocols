@@ -2,8 +2,8 @@
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
 
-<h1>Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines</h1>
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
+<h1>Network Security Groups and Inspecting Traffic Between Azure Virtual Machines</h1>
+In this tutorial, we observe various network traffic to and from Azure Virtual Machines (VMs) with Wireshark as well as experiment with Network Security Groups (NSGs). <br />
 
 <h2>Environments and Technologies Used</h2>
 
@@ -21,9 +21,9 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>High-Level Steps</h2>
 
 - Step 1: Create your resources via Microsoft Azure.
-- Step 2: Install WireShark on your Windows VM using Remote Desktop Connection.
+- Step 2: Install Wireshark on your Windows VM using Remote Desktop Connection.
 - Step 3: Use PowerShell to execute various Command- Line Tools and Network Protocols. 
-- Step 4: Edit your Linux VM's Network Security (Firewall) Settings.
+- Step 4: Edit your Linux VM's NSG (Firewall) Settings.
 - Step 5: Observe raw traffic being transmitted or blocked via WireShark.
   
 
@@ -33,7 +33,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img width="503" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/63a5e804-8beb-4d81-b07b-9e513c90566e">
 </p>
 <p>
-Witihin Azure, you'll need to create a new Resource Group that will house two Virtual Machines (VMs); one for Windows 10 Pro and the other for Linux (Ubuntu). Be sure that both VMs share the same Virtual Network (Vnet).
+Within Azure, you'll need to create a new Resource Group that will house two VMs; one for Windows 10 Pro and the other for Linux (Ubuntu). Be sure that both VMs share the same Virtual Network (Vnet).
 </p>
 <br />
 
@@ -58,7 +58,7 @@ Within WireShark, filter the traffic for ICMP (Internet Control Message Protocol
 <img width="773" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/2f950706-b2e3-4bcb-8673-6735d351d414">
 </p>
 <p>
-In Azure, open the Network Security Group settings for your Linux VM so you can create a new rule. Edit the Inbound Security Rules to Deny ICMP traffic. Keep in mind, you can update a rule's priority level if you want it to take precedent over other rules. Can you guess what'll happen next when you return to WireShark and PowerShell?
+In Azure, open the NSG settings for your Linux VM so you can create a new rule. Edit the Inbound Security Rules to Deny ICMP traffic. Keep in mind, you can update a rule's priority level if you want it to take precedent over other rules. Can you guess what'll happen next when you return to WireShark and PowerShell?
 </p>
 <br />
 
