@@ -70,7 +70,7 @@ As you may have guessed, your Windows VM is unable to successfully 'ping' your L
 <br />
 
 <p>
-<img width="727" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/fabeaaca-daf0-454c-a55f-7dfac4e7b8bf">
+<img width="960" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/0ba25a15-ee0f-4e47-b994-c92e7b9d15ee">
 </p>
 <p>
 In the next part of the tutorial, filter the traffic in Wireshark from ICMP to SSH (Secure Shell). SSH is another protocol similar to Remote Desktop without the visual display. To login to the Linux VM, use command 'ssh' following its username@IP address and, when prompted, enter its password. Once you're logged in, you can use Linux commands like 'id', 'uname -a', 'pwd', etc. to examine the SSH traffic being created via Wireshark. To close the SSH connection, type 'exit' into the PowerShell command line.
@@ -78,7 +78,7 @@ In the next part of the tutorial, filter the traffic in Wireshark from ICMP to S
 <br />
 
 <p>
-<img width="843" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/62504a1b-2c13-4993-afae-e6b3d85ffb36">
+<img width="960" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/3a3e2b91-6f9d-4618-a8c0-efe984334f57">
 </p>
 <p>
 To examine DHCP (Dynamic Host Configuration Protocol) traffic in Wireshark, change the filter from SSH to DHCP. To issue a new IP address to the Windows VM, enter 'ipconfig /renew' into PowerShell. This may cause a temporary disconnection as your device may be assigned a new IP address within the newtork. 
@@ -86,7 +86,7 @@ To examine DHCP (Dynamic Host Configuration Protocol) traffic in Wireshark, chan
 <br />
 
 <p>
-<img width="569" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/df1fb58b-a9af-486f-8379-5a1505f86394">
+<img width="960" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/cade5699-596f-43f2-b03e-700ab9005337">
 </p>
 <p>
 Next up, we will observe DNS (Domain Name System) traffic. Filter for DNS traffic in Wireshark. Instead of typing in DNS into the filter, you can also filter traffic if you know the port associated with the protocol. For instance, DNS uses both TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) with port 53. Enter 'udp.port==53' and it will filter for DNS traffic as well. In PowerShell, use command 'nslookup' following the Domain Name you wish to learn the public IP address for.
