@@ -30,7 +30,7 @@ In this lab, we observe various network traffic to and from Azure Virtual Machin
 <h2>Actions and Observations</h2>
 
 <p>
-<img width="503" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/63a5e804-8beb-4d81-b07b-9e513c90566e">
+<img width="854" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/2d2c2f35-03de-4d85-849a-471b58a1f701">
 </p>
 <p>
 Within Azure, you'll need to create a new Resource Group that will house two VMs; one for Windows 10 Pro and the other for Linux (Ubuntu). Be sure that both VMs share the same Virtual Network (vnet).
