@@ -38,8 +38,7 @@ Within Azure, you'll need to create a new Resource Group that will house two VMs
 <br />
 
 <p>
-<img width="395" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/cac466f9-05f2-4ffc-a51d-126e7cd56f24">
-<img width="365" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/ddbeb87f-d8c5-4613-a21c-4f8288e97f22">
+<img width="758" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/a452652a-1135-4ee6-bd51-1626c338e550">
 </p>
 <p>
 Connect to the Windows VM by using Remote Desktop. You'll need the VM's public IP address, username and password to successfully login. From there, install Wireshark (a Protocol Analyzer Software) to be able to inspect traffic within your local computer.  
@@ -47,15 +46,15 @@ Connect to the Windows VM by using Remote Desktop. You'll need the VM's public I
 <br />
 
 <p>
-<img width="668" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/3eda45d8-5a81-458a-971d-70e146314cb3">
+<img width="960" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/6982f53f-ac9c-4140-8c6a-0ebcba27ebc1">
 </p>
 <p>
-Within Wireshark, filter the traffic for ICMP (Internet Control Message Protocol). Next, open PowerShell from the windows start menu so you can execute various Command-Line tools. In order to test the connectivity between both VMs, you'll need to obtain the private IP address of the Linux VM in Azure. Using PowerShell, type 'ping' followed by the IP address or a domain name like google.com to test reachability of the target host. For a successful 'ping', you will see 4 data packets sent out; 4 received and 0 losses. Before the next part of this tutorial, execute a continuous ping to you Linux VM. To do this, add '-t' at the end of the 'ping' command. 
+Within Wireshark, click on the 'Ethernet' and click on the blue shark fin in the top left corner. Filter the traffic for ICMP (Internet Control Message Protocol). Next, open PowerShell from the windows start menu so you can execute various Command-Line tools. In order to test the connectivity between both VMs, you'll need to obtain the private IP address of the Linux VM in Azure. Using PowerShell, type 'ping' followed by the IP address or a domain name like google.com to test reachability of the target host. For a successful 'ping', you will see 4 data packets sent out; 4 received and 0 losses. Before the next part of this tutorial, execute a continuous ping to you Linux VM. To do this, add '-t' at the end of the 'ping' command. 
 </p>
 <br />
 
 <p>
-<img width="773" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/2f950706-b2e3-4bcb-8673-6735d351d414">
+<img width="820" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/5efcbafb-1a5b-4b53-a1a6-8d7b94509c2b">
 </p>
 <p>
 In Azure, open the NSG settings for your Linux VM so you can create a new rule. Edit the Inbound Security Rules to Deny ICMP traffic. Keep in mind, you can update a rule's priority level if you want it to take precedent over other rules. Can you guess what'll happen next via Wireshark and PowerShell?
@@ -63,7 +62,7 @@ In Azure, open the NSG settings for your Linux VM so you can create a new rule. 
 <br />
 
 <p>
-<img width="724" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/1f9ab4f5-3092-466b-b48e-ba558212360e">
+<img width="960" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/14865b7e-9beb-4fab-aced-5d6a24aa08ec">
 </p>
 <p>
 As you may have guessed, your Windows VM is unable to successfully 'ping' your Linux VM due to the rule created. The perpetual 'ping' being sent out by the Windows VM begins to return as "request timed out" via Powershell. Simultaneously, Wireshark fails to show a reply back after each request is made. This is an example of how Firewalls work. To allow the Linux VM to receive ICMP traffic again, simply delete the rule you've just created. 
