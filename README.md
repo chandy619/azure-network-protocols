@@ -9,7 +9,7 @@ In this lab, we observe various network traffic to and from Azure Virtual Machin
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
-- Various Command-Line Tools
+- CMD (Command Prompt)
 - Various Network Protocols (ICMP, SSH, DHCP, DNS, RDP)
 - Wireshark (Protocol Analyzer)
 
