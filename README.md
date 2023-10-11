@@ -9,7 +9,7 @@ In this lab, we observe various network traffic to and from Azure Virtual Machin
 
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
-- CMD (Command Prompt)
+- PowerShell
 - Various Network Protocols (ICMP, SSH, DHCP, DNS, RDP)
 - Wireshark (Protocol Analyzer)
 
@@ -22,7 +22,7 @@ In this lab, we observe various network traffic to and from Azure Virtual Machin
 
 - Step 1: Create your resources via Microsoft Azure.
 - Step 2: Install Wireshark on your Windows VM using Remote Desktop Connection.
-- Step 3: Use PowerShell to execute various Command- Line Tools and Network Protocols. 
+- Step 3: Use PowerShell to execute various network commands and protocols. 
 - Step 4: Edit your Linux VM's NSG (Firewall) Settings.
 - Step 5: Observe raw traffic being transmitted or blocked via WireShark.
   
@@ -49,7 +49,7 @@ Connect to the Windows VM by using Remote Desktop. You'll need the VM's public I
 <img width="960" alt="image" src="https://github.com/chandy619/azure-network-protocols/assets/144288806/6982f53f-ac9c-4140-8c6a-0ebcba27ebc1">
 </p>
 <p>
-Within Wireshark, click on the 'Ethernet' and click on the blue shark fin in the top left corner. Filter the traffic for ICMP (Internet Control Message Protocol). Next, open PowerShell from the windows start menu so you can execute various Command-Line tools. In order to test the connectivity between both VMs, you'll need to obtain the private IP address of the Linux VM in Azure. Using PowerShell, type 'ping' followed by the IP address or a domain name like google.com to test reachability of the target host. For a successful 'ping', you will see 4 data packets sent out; 4 received and 0 losses. Before the next part of this tutorial, execute a continuous ping to you Linux VM. To do this, add '-t' at the end of the 'ping' command. 
+Within Wireshark, click on the 'Ethernet' and click on the blue shark fin in the top left corner. Filter the traffic for ICMP (Internet Control Message Protocol). Next, open PowerShell from the windows start menu so you can execute various network commands and protocols. In order to test the connectivity between both VMs, you'll need to obtain the private IP address of the Linux VM in Azure. Using PowerShell, type 'ping' followed by the IP address or a domain name like google.com to test reachability of the target host. For a successful 'ping', you will see 4 data packets sent out; 4 received and 0 losses. Before the next part of this tutorial, execute a continuous ping to you Linux VM. To do this, add '-t' at the end of the 'ping' command. 
 </p>
 <br />
 
